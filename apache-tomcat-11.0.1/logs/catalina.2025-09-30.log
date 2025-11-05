@@ -1,0 +1,190 @@
+30-Sep-2025 12:13:05.687 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/11.0.1
+30-Sep-2025 12:13:05.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Nov 6 2024 19:08:24 UTC
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               11.0.1.0
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Linux
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       6.8.0-83-generic
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        /home/hagimont/install/jdk-17.0.5
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      17.0.5+9-LTS-191
+30-Sep-2025 12:13:05.692 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Oracle Corporation
+30-Sep-2025 12:13:05.693 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    /home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1
+30-Sep-2025 12:13:05.693 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    /home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1
+30-Sep-2025 12:13:05.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/conf/logging.properties
+30-Sep-2025 12:13:05.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Sep-2025 12:13:05.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --enable-native-access=ALL-UNNAMED
+30-Sep-2025 12:13:05.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1
+30-Sep-2025 12:13:05.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1
+30-Sep-2025 12:13:05.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/temp
+30-Sep-2025 12:13:05.708 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path : [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Sep-2025 12:13:06.056 INFO [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+30-Sep-2025 12:13:06.081 INFO [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [593] millisecondes
+30-Sep-2025 12:13:06.148 INFO [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+30-Sep-2025 12:13:06.148 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/11.0.1]
+30-Sep-2025 12:13:06.164 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/manager]
+30-Sep-2025 12:13:06.665 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/manager] de l'application web s'est terminé en [497] ms
+30-Sep-2025 12:13:06.665 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/examples]
+30-Sep-2025 12:13:07.014 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/examples] de l'application web s'est terminé en [348] ms
+30-Sep-2025 12:13:07.014 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/ROOT]
+30-Sep-2025 12:13:07.053 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/ROOT] de l'application web s'est terminé en [39] ms
+30-Sep-2025 12:13:07.054 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/host-manager]
+30-Sep-2025 12:13:07.111 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/host-manager] de l'application web s'est terminé en [56] ms
+30-Sep-2025 12:13:07.111 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/docs]
+30-Sep-2025 12:13:07.142 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/docs] de l'application web s'est terminé en [30] ms
+30-Sep-2025 12:13:07.154 INFO [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+30-Sep-2025 12:13:07.175 INFO [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [1093] millisecondes
+30-Sep-2025 12:13:57.172 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 12:13:57.203 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [30] ms
+30-Sep-2025 14:37:38.833 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/serv]
+30-Sep-2025 14:38:18.852 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 14:38:18.874 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [22] ms
+30-Sep-2025 14:45:48.946 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/serv]
+30-Sep-2025 14:45:48.952 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-2-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 14:45:48.953 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-3-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 14:45:48.954 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-4-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 14:45:58.961 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 14:45:58.977 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [16] ms
+30-Sep-2025 19:08:15.933 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/serv]
+30-Sep-2025 19:08:15.940 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-11-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.941 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-12-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.942 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-13-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.943 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-14-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.944 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-15-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.944 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-16-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.945 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-17-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.946 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-18-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.947 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-19-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.947 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-20-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.948 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-21-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.948 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-22-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.949 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-23-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.949 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-24-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.950 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-25-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:15.950 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-26-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 19:08:25.957 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 19:08:25.974 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [18] ms
+30-Sep-2025 22:35:51.806 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/serv]
+30-Sep-2025 22:35:51.813 WARNING [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-27-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 22:35:51.814 WARNING [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-28-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 22:35:51.815 WARNING [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [serv] semble avoir démarré un thread nommé [HttpClient-29-SelectorManager] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire ; la trace du thread est : 
+ java.base@17.0.5/sun.nio.ch.EPoll.wait(Native Method)
+ java.base@17.0.5/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.5/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ platform/java.net.http@17.0.5/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:889)
+30-Sep-2025 22:36:01.821 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 22:36:01.843 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [22] ms
+30-Sep-2025 23:58:02.559 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/serv]
+30-Sep-2025 23:58:12.567 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] de l'application web
+30-Sep-2025 23:58:12.590 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/shared/code/odb/mesures/apache-tomcat-11.0.1/webapps/serv.war] s'est terminé en [23] ms

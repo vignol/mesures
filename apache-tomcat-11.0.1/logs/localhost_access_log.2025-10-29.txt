@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:25:10 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 405 728
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:26:01 +0100] "GET /sev1/Serv?image=small.jpg HTTP/1.1" 404 686
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:26:32 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 405 728
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:32:48 +0100] "GET /serv/Serv?image=small.jpg HTTP/1.1" 200 9895
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:32:57 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 405 728
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:33:52 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 405 728
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:41:36 +0100] "GET /serv1/Serv?image=large.jpg HTTP/1.1" 405 728
+0:0:0:0:0:0:0:1 - - [29/Oct/2025:22:41:43 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 405 728

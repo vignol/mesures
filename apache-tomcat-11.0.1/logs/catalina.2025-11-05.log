@@ -1,0 +1,168 @@
+05-Nov-2025 13:49:22.308 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+05-Nov-2025 13:50:42.405 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+05-Nov-2025 13:50:42.440 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad local variable type
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @4: aload
+  Reason:
+    Type top (current frame, locals[8]) is not assignable to reference type
+  Current Frame:
+    bci: @4
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse' }
+    stack: { uninitialized 0, uninitialized 0 }
+  Bytecode:
+    0000000: bb00 3459 1908 b700 373a 08bb 0039 5919
+    0000010: 09b7 003c 3a09 1908 123e b900 4202 004e
+    0000020: 1908 1244 b900 4202 003a 042d c700 5219
+    0000030: 08b9 0048 0100 1904 ba00 5300 00b9 0059
+    0000040: 0200 bb00 5b5a 5f03 01b7 005e 3a05 1905
+    0000050: b600 623a 0619 092a b600 6319 04b9 0066
+    0000060: 0200 b900 6a02 0019 0919 06be b900 6e02
+    0000070: 0019 09b9 0072 0100 1906 b600 78b1 2d19
+    0000080: 04ba 007d 0000 3a05 b800 8119 05b8 0087
+    0000090: b900 8b02 00b9 008e 0100 b900 9201 003a
+    00000a0: 062a b400 2819 06b8 0096 b600 9a3a 0719
+    00000b0: 07b9 009e 0100 12a0 b600 a619 09ba 00b9
+    00000c0: 0000 b600 bf19 07b9 009e 0100 12c1 b600
+    00000d0: a619 09ba 00c6 0000 b600 bf19 07b9 009e
+    00000e0: 0100 12c8 b600 cc19 09ba 00d1 0000 b900
+    00000f0: d602 0019 09b9 0072 0100 1907 b900 da01
+    0000100: 00c0 00dc bb00 de5a 5f04 b700 e1b6 0078
+    0000110: a700 0a3a 0719 07b6 00e4 b1            
+  Exception Handler Table:
+    bci [161, 272] => handler: 275
+  Stackmap Table:
+    full_frame(@126,{Object[#2],Object[#250],Object[#252],Object[#254],Object[#254],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@275,{Object[#2],Object[#250],Object[#252],Object[#254],Object[#254],Object[#254],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@282,{Object[#2],Object[#250],Object[#252],Object[#254],Object[#254],Object[#254],Object[#12],Object[#256],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+05-Nov-2025 13:50:42.440 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [36] ms
+05-Nov-2025 14:16:33.074 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+05-Nov-2025 14:33:23.368 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+05-Nov-2025 14:33:23.400 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @33: invokeinterface
+  Reason:
+    Type 'jakarta/servlet/http/HttpServletRequest' (current frame, stack[0]) is not assignable to 'odb/MyHttpServletRequest'
+  Current Frame:
+    bci: @33
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', top, top, top, top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'jakarta/servlet/http/HttpServletRequest', 'java/lang/String' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 2b12
+    0000020: 44b9 0042 0200 3a04 2dc7 0051 2bb9 0048
+    0000030: 0100 1904 ba00 5300 00b9 0059 0200 bb00
+    0000040: 5b5a 5f03 01b7 005e 3a05 1905 b600 623a
+    0000050: 062c 2ab6 0063 1904 b900 6602 00b9 006a
+    0000060: 0200 2c19 06b4 0070 beb9 0074 0200 2cb9
+    0000070: 0078 0100 1906 b600 7eb1 2d19 04ba 0083
+    0000080: 0000 3a05 b800 8719 05b8 008d b900 9102
+    0000090: 00b9 0094 0100 b900 9801 003a 062a b400
+    00000a0: 2819 06b8 009c b600 a03a 0719 07b9 00a4
+    00000b0: 0100 12a6 b600 ac2c ba00 bf00 00b6 00c5
+    00000c0: 1907 b900 a401 0012 c7b6 00ac 2cba 00cc
+    00000d0: 0000 b600 c519 07b9 00a4 0100 12ce b600
+    00000e0: d22c ba00 d700 00b9 00dc 0200 2cb9 0078
+    00000f0: 0100 1907 b900 e001 00c0 00e1 bb00 6c5a
+    0000100: 5f04 b700 e4b6 007e a700 0a3a 0719 07b6
+    0000110: 00e7 b1                                
+  Exception Handler Table:
+    bci [157, 264] => handler: 267
+  Stackmap Table:
+    full_frame(@122,{Object[#2],Object[#254],Object[#256],Object[#258],Object[#258],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@267,{Object[#2],Object[#254],Object[#256],Object[#258],Object[#258],Object[#258],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@274,{Object[#2],Object[#254],Object[#256],Object[#258],Object[#258],Object[#258],Object[#12],Object[#260],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+05-Nov-2025 14:33:23.400 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [32] ms

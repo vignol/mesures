@@ -1,0 +1,1527 @@
+30-Oct-2025 09:48:58.938 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 09:50:28.957 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 09:50:28.982 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [26] ms
+30-Oct-2025 10:00:29.049 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:01:19.063 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:01:19.085 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad local variable type
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @4: aload
+  Reason:
+    Type top (current frame, locals[8]) is not assignable to reference type
+  Current Frame:
+    bci: @4
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse' }
+    stack: { uninitialized 0, uninitialized 0 }
+  Bytecode:
+    0000000: bb00 3459 1908 b700 373a 08bb 0039 5919
+    0000010: 09b7 003c 3a09 1908 123e b900 4202 004e
+    0000020: 1908 1244 b900 4202 003a 042d c700 5219
+    0000030: 08b9 0048 0100 1904 ba00 5300 00b9 0059
+    0000040: 0200 bb00 5b5a 5f03 01b7 005e 3a05 1905
+    0000050: b600 623a 0619 092a b600 6319 04b9 0066
+    0000060: 0200 b900 6a02 0019 0919 06be b900 6e02
+    0000070: 0019 09b9 0072 0100 1906 b600 78b1 2d19
+    0000080: 04ba 007d 0000 3a05 b800 8119 05b8 0087
+    0000090: b900 8b02 00b9 008e 0100 b900 9201 003a
+    00000a0: 062a b400 2819 06b8 0096 b600 9a3a 0719
+    00000b0: 07b9 009e 0100 12a0 b600 a619 09ba 00b9
+    00000c0: 0000 b600 bf19 07b9 009e 0100 12c1 b600
+    00000d0: a619 09ba 00c6 0000 b600 bf19 07b9 009e
+    00000e0: 0100 12c8 b600 cc19 09ba 00d1 0000 b900
+    00000f0: d602 0019 09b9 0072 0100 1907 b900 da01
+    0000100: 00c0 00dc bb00 de5a 5f04 b700 e1b6 0078
+    0000110: a700 0a3a 0719 07b6 00e4 b1            
+  Exception Handler Table:
+    bci [161, 272] => handler: 275
+  Stackmap Table:
+    full_frame(@126,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@275,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@282,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 10:01:19.086 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [24] ms
+30-Oct-2025 10:03:59.104 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:05:39.117 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:05:39.135 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 10:05:39.136 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [18] ms
+30-Oct-2025 10:07:19.145 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:07:49.154 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:07:49.190 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [36] ms
+30-Oct-2025 10:18:29.268 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:18:29.272 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.272 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-7] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.273 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-9] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-10] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-12] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-13] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-14] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-15] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-16] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-17] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-18] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-19] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-20] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-21] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-22] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-23] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.274 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-24] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-25] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-26] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-27] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-28] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-29] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-30] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-31] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-32] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-33] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-34] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-35] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-36] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-37] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-38] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.275 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-39] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.276 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-40] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.276 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-41] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.276 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-42] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.280 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-43] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.280 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-44] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.280 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-45] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-46] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-47] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-48] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-49] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-50] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-51] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-52] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-53] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-54] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-55] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-56] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-57] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.281 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-58] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-59] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-60] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-61] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-62] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-63] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-64] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-65] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-66] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-67] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-68] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-69] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-70] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.282 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-71] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.283 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-72] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.283 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-73] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.283 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-74] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.283 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-75] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:18:29.283 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [serv1] appears to have started a thread named [Thread-76] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/sun.nio.ch.Net.accept(Native Method)
+ java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+ java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+ java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+ java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+ odb.Downloader.run(Downloader.java:64)
+30-Oct-2025 10:19:49.294 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:19:49.315 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [21] ms
+30-Oct-2025 10:48:09.519 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:48:59.532 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:48:59.549 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 10:48:59.549 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [17] ms
+30-Oct-2025 10:53:29.576 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 10:54:59.590 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 10:54:59.610 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 10:54:59.610 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [20] ms
+30-Oct-2025 11:48:19.946 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 11:50:19.963 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 11:50:19.980 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 11:50:19.980 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [17] ms
+30-Oct-2025 11:54:10.004 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 11:56:00.021 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 11:56:00.044 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 11:56:00.045 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [25] ms
+30-Oct-2025 11:59:30.069 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 12:00:30.084 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 12:00:30.103 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 12:00:30.104 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [19] ms
+30-Oct-2025 12:14:20.190 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 12:15:20.201 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 12:15:20.221 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 12:15:20.221 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [20] ms
+30-Oct-2025 15:58:31.706 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 15:58:41.714 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 15:58:41.753 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 15:58:41.754 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [40] ms
+30-Oct-2025 15:59:32.261 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 15:59:32.267 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 15:59:32.306 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:653)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:933)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1875)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:735)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:387)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1642)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:263)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:940)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1139)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1143)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1121)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/serv1]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:566)
+		... 23 more
+	Caused by: java.lang.VerifyError: Bad type on operand stack in arraylength
+Exception Details:
+  Location:
+    app/Serv.doGet(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;)V @105: arraylength
+  Reason:
+    Invalid type: 'pack/Pair' (current frame, stack[1])
+  Current Frame:
+    bci: @105
+    flags: { }
+    locals: { 'app/Serv', 'jakarta/servlet/http/HttpServletRequest', 'jakarta/servlet/http/HttpServletResponse', 'java/lang/String', 'java/lang/String', 'odb/MyInputStream', 'pack/Pair', top, 'odb/MyHttpServletRequest', 'odb/MyHttpServletResponse' }
+    stack: { 'odb/MyHttpServletResponse', 'pack/Pair' }
+  Bytecode:
+    0000000: bb00 3459 2bb7 0037 3a08 bb00 3959 2cb7
+    0000010: 003c 3a09 1908 123e b900 4202 004e 1908
+    0000020: 1244 b900 4202 003a 042d c700 5219 08b9
+    0000030: 0048 0100 1904 ba00 5300 00b9 0059 0200
+    0000040: bb00 5b5a 5f03 01b7 005e 3a05 1905 b600
+    0000050: 623a 0619 092a b600 6319 04b9 0066 0200
+    0000060: b900 6a02 0019 0919 06be b900 6e02 0019
+    0000070: 09b9 0072 0100 1906 b600 78b1 2d19 04ba
+    0000080: 007d 0000 3a05 b800 8119 05b8 0087 b900
+    0000090: 8b02 00b9 008e 0100 b900 9201 003a 062a
+    00000a0: b400 2819 06b8 0096 b600 9a3a 0719 07b9
+    00000b0: 009e 0100 12a0 b600 a619 09ba 00b9 0000
+    00000c0: b600 bf19 07b9 009e 0100 12c1 b600 a619
+    00000d0: 09ba 00c6 0000 b600 bf19 07b9 009e 0100
+    00000e0: 12c8 b600 cc19 09ba 00d1 0000 b900 d602
+    00000f0: 0019 09b9 0072 0100 1907 b900 da01 00c0
+    0000100: 00dc bb00 de5a 5f04 b700 e1b6 0078 a700
+    0000110: 0a3a 0719 07b6 00e4 b1                 
+  Exception Handler Table:
+    bci [159, 270] => handler: 273
+  Stackmap Table:
+    full_frame(@124,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Top,Top,Top,Object[#52],Object[#57]},{})
+    full_frame(@273,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Top,Object[#52],Object[#57]},{Object[#50]})
+    full_frame(@280,{Object[#2],Object[#246],Object[#248],Object[#250],Object[#250],Object[#250],Object[#12],Object[#252],Object[#52],Object[#57]},{})
+
+		at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+		at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3473)
+		at java.base/java.lang.Class.getDeclaredFields(Class.java:2542)
+		at org.apache.catalina.startup.WebAnnotationSet.loadFieldsAnnotation(WebAnnotationSet.java:199)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationServletAnnotations(WebAnnotationSet.java:138)
+		at org.apache.catalina.startup.WebAnnotationSet.loadApplicationAnnotations(WebAnnotationSet.java:69)
+		at org.apache.catalina.startup.ContextConfig.applicationAnnotationsConfig(ContextConfig.java:319)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:964)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4311)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 24 more
+30-Oct-2025 15:59:32.307 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [39] ms
+30-Oct-2025 16:17:12.445 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/serv1]
+30-Oct-2025 16:18:22.459 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war]
+30-Oct-2025 16:18:22.506 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vignol-bande/Downloads/mesures/apache-tomcat-11.0.1/webapps/serv1.war] has finished in [46] ms

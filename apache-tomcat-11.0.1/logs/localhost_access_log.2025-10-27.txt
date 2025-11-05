@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:01:48 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:01:52 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:11:14 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:14:02 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:14:02 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [27/Oct/2025:18:14:04 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 404 687
