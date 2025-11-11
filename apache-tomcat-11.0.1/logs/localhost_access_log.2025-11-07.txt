@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [07/Nov/2025:14:51:50 +0100] "GET /serv1/Serv?image=small.jpg HTTP/1.1" 200 9895
+0:0:0:0:0:0:0:1 - - [07/Nov/2025:14:51:58 +0100] "GET /serv1/Serv?image=large.jpg HTTP/1.1" 200 101966
